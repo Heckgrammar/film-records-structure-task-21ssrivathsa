@@ -24,15 +24,28 @@
             Film ironMan = new Film("Iron Man","12A",2008,false);
             Film antMan = new Film("Ant-Man", "12A", 2015, false);
             Film[] filmCollection = new Film[] { antMan,hulk,ironMan };
-            int year = 0;
-            int position = 0;
 
             //  Write the code to do the following
             // Loop through the array of films and check for the newest film
             // Produce one output to say the name of the newest film
 
-            // Write the code to update the andMan record to show the film is currently being shown
+            // Write the code to update the antMan record to show the film is currently being shown
 
+            string newestYr = "";
+            for (int i = 0; i < filmCollection.Length-1; i++)
+            {
+                if (filmCollection[i].year > filmCollection[i+1].year) 
+                {
+                    newestYr = filmCollection[i].title;
+                }
+                else
+                {
+                    newestYr = filmCollection[i+1].title;
+                }
+            }
+            Console.WriteLine($"{newestYr} is th newest film in the collection");
+
+            antMan.beingShown = true;
 
         }
     }
